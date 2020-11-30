@@ -1,0 +1,27 @@
+{
+  "name": "package",
+  "version": "1.0.0",
+  "description": "package",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmyardley/readme-generator.git"
+  },
+  "keywords": [
+    "package",
+    "readme",
+    "generator"
+  ],
+  "author": "jmyardley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmyardley/readme-generator/issues"
+  },
+  "homepage": "https://github.com/jmyardley/readme-generator#readme",
+  "dependencies": {
+    "inquirer": "^7.3.3"
+  }
+}
