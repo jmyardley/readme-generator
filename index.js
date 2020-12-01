@@ -40,7 +40,7 @@ const promptUser = () =>
                 type: 'list',
                 message: 'Choose License: ',
                 name: 'license',
-                choices: ['BSD', 'MIT', 'GPL'],
+                choices: ['BSD', 'MIT', 'GPL', 'WTFPL'],
             },
             {
                 type: 'input',
