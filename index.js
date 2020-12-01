@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
-
 const writeFile = util.promisify(fs.writeFile);
 
 const promptUser = () =>
@@ -58,7 +57,7 @@ const promptUser = () =>
 
 
 const generateReadme = (answers) =>
-    `The title of this project is ${answers.title}.\n\n\nDescription: \n${answers.description}\n\nInstallation instructions: \n${answers.installation}\n\nUsage information: \n${answers.usage}\n\nContribution guidelines: \n${answers.contribution}\n\nTest instructions: \n${answers.test}\n\nLicense: ${answers.license}`;
+    `The title of this project is ${answers.title}.\n\n![badge](https://img.shields.io/badge/License-${answers.license}-brightgreen)\n\nDescription: \n${answers.description}\n\nContents: [Installation](#Installation)|[Usage](#Usage)|[Contribution](#Contribution)|[Test](#Test)|[License](#License)|[Contact](#Contact) \n\n##Installation\n\n Installation instructions: \n${answers.installation}\n\n##Usage\n\n Usage information: </a>\n${answers.usage}\n\n##Contribution\n\n Contribution guidelines: \n${answers.contribution}\n\n##Test\n\n Test instructions: \n${answers.test}\n\n##License\n\n This project is licensed under ${answers.license} rules.\n\n##Contact\n\n Contact: \nGithub: https://github.com/${answers.github} \nEmail: ${answers.email}`;
 
 promptUser()
     .then((answers) => writeFile('readme.md', generateReadme(answers)))
