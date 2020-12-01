@@ -43,14 +43,25 @@ const promptUser = () =>
                 name: 'license',
                 choices: ['BSD', 'MIT', 'GPL'],
             },
+            {
+                type: 'input',
+                message: 'Enter Github username: ',
+                name: 'github',
+            },
+            {
+                type: 'input',
+                message: 'Enter email: ',
+                name: 'email',
+            },
 
         ]);
 
 
-const generateHTML = (answers) => '';
+const generateReadme = (answers) =>
+    `The title of this project is ${answers.title}.\n\n\nDescription: \n${answers.description}\n\nInstallation instructions: \n${answers.installation}\n\nUsage information: \n${answers.usage}\n\nContribution guidelines: \n${answers.contribution}\n\nTest instructions: \n${answers.test}\n\nLicense: ${answers.license}`;
 
 promptUser()
-.then((answers) => writeFile('index.html', generateHTML(answers)))
-.then(() => console.log('Successfully wrote to index.html'))
-.catch((err) => console.error(err));
+    .then((answers) => writeFile('readme.md', generateReadme(answers)))
+    .then(() => console.log('Successfully wrote to readme.md'))
+    .catch((err) => console.error(err));
 
